@@ -1,8 +1,12 @@
-# OEC2025
+# TerraCustos
 
 ## Overview
 
-OEC2025 is a project aimed at providing real-time disaster reporting and visualization. The project leverages Mapbox for map visualization and Supabase for backend services. Users can report disasters, view disaster reports, and get real-time updates on disaster events.
+TerraCustos is a project aimed at providing real-time disaster reporting and visualization. The project leverages Mapbox for map visualization and Supabase for backend services. Users can report disasters, view disaster reports, and get real-time updates on disaster events.
+
+## Our Team
+
+Team Half Alive: Tawsif Mayaz and Abeer Das
 
 ## Features
 
