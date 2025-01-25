@@ -13,7 +13,7 @@ const ReportDisplay = ({ title, location, severity, description, category, longi
     };
 
     const containerStyle = {
-        backgroundColor: '#333',
+        backgroundColor: 'rgba(164, 164, 164, 0.1)',
         borderRadius: '10px',
         boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
         padding: '10px',

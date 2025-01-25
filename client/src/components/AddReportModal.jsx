@@ -91,25 +91,17 @@ const ReportModal = ({ isOpen, onClose }) => {
 
     const modalStyle = {
         position: 'fixed',
-        top: '10%',
-        width: '300px',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
         backgroundColor: '#333',
         padding: '20px',
-        borderRadius: '5px',
-        boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)',
-        zIndex: 1,
-        color: 'white',
-    };
-
-    const modalContentStyle = {
-        backgroundColor: '#333',
-        margin: 'auto',
-        padding: '20px',
-        border: '1px solid #888',
-        width: '80%',
-        maxWidth: '500px',
         borderRadius: '10px',
+        boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)',
+        zIndex: 1000,
         color: 'white',
+        width: '90%',
+        maxWidth: '500px',
     };
 
     const closeButtonStyle = {
@@ -119,139 +111,158 @@ const ReportModal = ({ isOpen, onClose }) => {
         fontWeight: 'bold',
         cursor: 'pointer',
     };
-    
+
     const closeButtonHoverStyle = {
-        color: 'black',
+        color: '#fff',
     };
-    
+
     const inputStyle = {
         width: '100%',
         padding: '10px',
         margin: '10px 0',
         borderRadius: '5px',
-        border: '1px solid #ccc',
+        border: '1px solid #555',
         backgroundColor: '#444',
         color: 'white',
+        fontSize: '16px',
     };
-    
+
+    const inputStyle2 = {
+        width: '80%',
+        padding: '10px',
+        margin: '10px auto',
+        borderRadius: '5px',
+        border: '1px solid #555',
+        backgroundColor: '#444',
+        color: 'white',
+        fontSize: '16px',
+        display: 'block',
+    };
+
     const buttonStyle = {
         width: '100%',
         padding: '10px',
         margin: '10px 0',
         borderRadius: '5px',
         border: 'none',
-        backgroundColor: '#007bff',
+        backgroundColor: '#813737', 
         color: 'white',
         cursor: 'pointer',
+        fontSize: '16px',
+    };
+
+    const labelStyle = {
+        display: 'block',
+        marginBottom: '5px',
+        fontWeight: 'bold',
     };
 
     return (
         <div style={modalStyle}>
-            <div style={modalContentStyle}>
-                <span
-                    style={closeButtonStyle}
-                    onMouseOver={(e) => (e.currentTarget.style.color = closeButtonHoverStyle.color)}
-                    onMouseOut={(e) => (e.currentTarget.style.color = closeButtonStyle.color)}
-                    onClick={onClose}
-                >
-                    &times;
-                </span>
-                <form onSubmit={handleSubmit}>
-                    <label>
-                        Title:
-                        <input
-                            type="text"
-                            value={title}
-                            onChange={(e) => setTitle(e.target.value)}
-                            required
-                            style={inputStyle}
-                        />
-                    </label>
-                    <label>
-                        Description:
-                        <textarea
-                            value={description}
-                            onChange={(e) => setDescription(e.target.value)}
-                            required
-                            style={{ ...inputStyle, height: '100px' }}
-                        />
-                    </label>
-                    <label>
-                        Category:
-                        <select
-                            value={category}
-                            onChange={(e) => setCategory(e.target.value)}
-                            required
-                            style={inputStyle}
-                        >
-                            <option value="">Select Category</option>
-                            <option value="earthquake">Earthquake</option>
-                            <option value="flood">Flood</option>
-                            <option value="hurricane">Hurricane</option>
-                            <option value="wildfire">Wildfire</option>
-                            <option value="tornado">Tornado</option>
-                        </select>
-                    </label>
-                    <label>
-                        Severity:
-                        <select
-                            value={severity}
-                            onChange={(e) => setSeverity(e.target.value)}
-                            required
-                            style={inputStyle}
-                        >
-                            <option value="">Select Severity</option>
-                            <option value="not severe">Not Severe</option>
-                            <option value="mild">Mild</option>
-                            <option value="moderate">Moderate</option>
-                            <option value="severe">Severe</option>
-                        </select>
-                    </label>
-                    <label>
-                        Location:
-                        <select
-                            value={location}
-                            onChange={(e) => setLocation(e.target.value)}
-                            required
-                            style={inputStyle}
-                        >
-                            <option value="default">Current Location</option>
-                            <option value="toronto">Toronto</option>
-                            <option value="hamilton">Hamilton</option>
-                            <option value="markham">Markham</option>
-                            <option value="brampton">Brampton</option>
-                            <option value="mississauga">Mississauga</option>
-                            <option value="waterloo">Waterloo</option>
-                            <option value="ottawa">Ottawa</option>
-                            <option value="montreal">Montreal</option>
-                            <option value="north_york">North York</option>
-                            <option value="scarborough">Scarborough</option>
-                            <option value="new_york">New York</option>
-                            <option value="london">London</option>
-                            <option value="paris">Paris</option>
-                            <option value="tokyo">Tokyo</option>
-                            <option value="sydney">Sydney</option>
-                            <option value="moscow">Moscow</option>
-                            <option value="beijing">Beijing</option>
-                            <option value="rio_de_janeiro">Rio de Janeiro</option>
-                            <option value="cape_town">Cape Town</option>
-                            <option value="cairo">Cairo</option>
-                            <option value="delhi">Delhi</option>
-                            <option value="mexico_city">Mexico City</option>
-                            <option value="berlin">Berlin</option>
-                            <option value="buenos_aires">Buenos Aires</option>
-                            <option value="nairobi">Nairobi</option>
-                            <option value="bangkok">Bangkok</option>
-                            <option value="istanbul">Istanbul</option>
-                            <option value="seoul">Seoul</option>
-                            <option value="jakarta">Jakarta</option>
-                        </select>
-                    </label>
-                    <button type="submit" style={buttonStyle}>
-                        Submit
-                    </button>
-                </form>
-            </div>
+            <span
+                style={closeButtonStyle}
+                onMouseOver={(e) => (e.currentTarget.style.color = closeButtonHoverStyle.color)}
+                onMouseOut={(e) => (e.currentTarget.style.color = closeButtonStyle.color)}
+                onClick={onClose}
+            >
+                &times;
+            </span>
+            <h2 style={{ marginBottom: '20px', textAlign: 'center' }}>Report a Disaster</h2>
+            <form onSubmit={handleSubmit}>
+                <label style={labelStyle}>
+                    Title:
+                    <input
+                        type="text"
+                        value={title}
+                        onChange={(e) => setTitle(e.target.value)}
+                        required
+                        style={inputStyle2}
+                    />
+                </label>
+                <label style={labelStyle}>
+                    Description:
+                    <textarea
+                        value={description}
+                        onChange={(e) => setDescription(e.target.value)}
+                        required
+                        style={{ ...inputStyle2, height: '100px' }}
+                    />
+                </label>
+                <label style={labelStyle}>
+                    Category:
+                    <select
+                        value={category}
+                        onChange={(e) => setCategory(e.target.value)}
+                        required
+                        style={inputStyle}
+                    >
+                        <option value="">Select Category</option>
+                        <option value="earthquake">Earthquake</option>
+                        <option value="flood">Flood</option>
+                        <option value="hurricane">Hurricane</option>
+                        <option value="wildfire">Wildfire</option>
+                        <option value="tornado">Tornado</option>
+                    </select>
+                </label>
+                <label style={labelStyle}>
+                    Severity:
+                    <select
+                        value={severity}
+                        onChange={(e) => setSeverity(e.target.value)}
+                        required
+                        style={inputStyle}
+                    >
+                        <option value="">Select Severity</option>
+                        <option value="not severe">Not Severe</option>
+                        <option value="mild">Mild</option>
+                        <option value="moderate">Moderate</option>
+                        <option value="severe">Severe</option>
+                    </select>
+                </label>
+                <label style={labelStyle}>
+                    Location:
+                    <select
+                        value={location}
+                        onChange={(e) => setLocation(e.target.value)}
+                        required
+                        style={inputStyle}
+                    >
+                        <option value="default">Current Location</option>
+                        <option value="toronto">Toronto</option>
+                        <option value="hamilton">Hamilton</option>
+                        <option value="markham">Markham</option>
+                        <option value="brampton">Brampton</option>
+                        <option value="mississauga">Mississauga</option>
+                        <option value="waterloo">Waterloo</option>
+                        <option value="ottawa">Ottawa</option>
+                        <option value="montreal">Montreal</option>
+                        <option value="north_york">North York</option>
+                        <option value="scarborough">Scarborough</option>
+                        <option value="new_york">New York</option>
+                        <option value="london">London</option>
+                        <option value="paris">Paris</option>
+                        <option value="tokyo">Tokyo</option>
+                        <option value="sydney">Sydney</option>
+                        <option value="moscow">Moscow</option>
+                        <option value="beijing">Beijing</option>
+                        <option value="rio_de_janeiro">Rio de Janeiro</option>
+                        <option value="cape_town">Cape Town</option>
+                        <option value="cairo">Cairo</option>
+                        <option value="delhi">Delhi</option>
+                        <option value="mexico_city">Mexico City</option>
+                        <option value="berlin">Berlin</option>
+                        <option value="buenos_aires">Buenos Aires</option>
+                        <option value="nairobi">Nairobi</option>
+                        <option value="bangkok">Bangkok</option>
+                        <option value="istanbul">Istanbul</option>
+                        <option value="seoul">Seoul</option>
+                        <option value="jakarta">Jakarta</option>
+                    </select>
+                </label>
+                <button type="submit" style={buttonStyle}>
+                    Submit
+                </button>
+            </form>
         </div>
     );
 };

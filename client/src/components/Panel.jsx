@@ -23,14 +23,14 @@ const Panel = () => {
     left: "0",
     width: "380px",
     height: "calc(100vh - 40px)",
-    backgroundColor: "rgba(51, 51, 51, 0.9)",
+    backgroundColor: "rgba(51, 51, 51, 0.5)", // More transparent background
     borderRadius: "10px",
     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
     padding: "20px",
     overflowY: "auto",
     zIndex: 10,
     color: "white",
-    backdropFilter: "blur(10px)",
+    backdropFilter: "blur(10px)", // Blur effect
   };
 
   const buttonStyle = {
