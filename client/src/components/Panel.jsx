@@ -19,9 +19,9 @@ const Panel = () => {
 
   const panelStyle = {
     position: "fixed",
-    top: "20px",
-    left: "20px",
-    width: "280px",
+    top: "0",
+    left: "0",
+    width: "380px",
     height: "calc(100vh - 40px)",
     backgroundColor: "rgba(51, 51, 51, 0.9)",
     borderRadius: "10px",

@@ -14,20 +14,20 @@ const ReportDisplay = ({ title, location, severity, description, category, longi
 
     const containerStyle = {
         backgroundColor: '#333',
-        borderRadius: '10px', 
-        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', 
-        padding: '10px', 
-        color: 'white', 
-        maxWidth: '240px', 
+        borderRadius: '10px',
+        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+        padding: '10px',
+        color: 'white',
+        maxWidth: '240px',
         margin: '10px auto',
         transition: 'outline 0.3s ease-in-out',
-        cursor: 'pointer', 
+        cursor: 'pointer',
     };
 
     const titleStyle = {
-        fontSize: '18px', 
-        fontWeight: 'bold', 
-        marginBottom: '5px', 
+        fontSize: '18px',
+        fontWeight: 'bold',
+        marginBottom: '5px',
     };
 
     const textStyle = {
@@ -38,7 +38,7 @@ const ReportDisplay = ({ title, location, severity, description, category, longi
         <div style={containerStyle} className="report-display" onClick={openModal}>
             <h2 style={titleStyle}>{title}</h2>
             <p style={textStyle}>Location: {location}</p>
-            <p style={textStyle}>Severity: {severity}</p>            
+            <p style={textStyle}>Severity: {severity}</p>
 
             <ReportDisplayModal 
                 isOpen={isModalOpen} 

@@ -3,11 +3,11 @@ import React from 'react';
 const ReportDisplayModal = ({ isOpen, onRequestClose, report }) => {
     const { title, location, severity, description, category, longitude, latitude, createdAt } = report;
 
-    if (!isOpen) return null; 
+    if (!isOpen) return null;
 
     return (
-        <div style={overlayStyle}>
-            <div style={modalStyle}>
+        <div style={overlayStyle} onClick={onRequestClose}>
+            <div style={modalStyle} onClick={(e) => e.stopPropagation()}>
                 <h2>{title}</h2>
                 <p><strong>Location:</strong> {location}</p>
                 <p><strong>Severity:</strong> {severity}</p>
@@ -34,7 +34,7 @@ const overlayStyle = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    zIndex: 1000, 
+    zIndex: 1000,
 };
 
 const modalStyle = {
