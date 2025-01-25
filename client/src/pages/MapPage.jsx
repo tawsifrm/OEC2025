@@ -45,20 +45,18 @@ const MapPage = () => {
               }
       
               const data = await response.json();
-              console.log("Fetched disaster events:", data); // Log the fetched data
+              console.log("Fetched disaster events:", data); 
       
-              // Extract relevant information and combine with existing reports
               const disasterReports = data.results.map((event) => ({
                 title: event.title,
                 description: event.description,
-                category: event.category, // Get the category directly
-                longitude: event.location[0], // Access longitude from location array
-                latitude: event.location[1], // Access latitude from location array
-                created_at: new Date().toISOString(), // Use current date for created_at
-                severity: "Unknown", // Set a default severity or modify as needed
+                category: event.category,
+                longitude: event.location[0],
+                latitude: event.location[1], 
+                created_at: new Date().toISOString(), 
+                severity: "Unknown", 
               }));
       
-              // Combine with existing reports from Supabase
               setReports((prevReports) => [...prevReports, ...disasterReports]);
             } catch (error) {
               console.error("Error fetching disaster events:", error);
@@ -70,7 +68,7 @@ const MapPage = () => {
       }, []);
 
     useEffect(() => {
-        if (map.current) return; // initialize map only once
+        if (map.current) return; 
         map.current = new mapboxgl.Map({
             container: mapContainer.current,
             style: 'mapbox://styles/mapbox/dark-v10',
@@ -85,15 +83,15 @@ const MapPage = () => {
                     map.current.flyTo({
                         center: [longitude, latitude],
                         zoom: 8,
-                        essential: true // this animation is considered essential with respect to prefers-reduced-motion
+                        essential: true
                     });
 
                     const userLocationMarker = document.createElement('div');
                     userLocationMarker.style.width = '10px';
                     userLocationMarker.style.height = '10px';
-                    userLocationMarker.style.backgroundColor = '#1e90ff'; // DodgerBlue color
+                    userLocationMarker.style.backgroundColor = '#1e90ff'; 
                     userLocationMarker.style.borderRadius = '50%';
-                    userLocationMarker.style.boxShadow = '0 0 10px 5px rgba(30, 144, 255, 0.7)'; // Glowing effect
+                    userLocationMarker.style.boxShadow = '0 0 10px 5px rgba(30, 144, 255, 0.7)';
 
                     new mapboxgl.Marker(userLocationMarker)
                         .setLngLat([longitude, latitude])
@@ -110,15 +108,15 @@ const MapPage = () => {
     }, []);
 
     useEffect(() => {
-        if (!map.current) return; // wait for the map to initialize
+        if (!map.current) return;
 
         reports.forEach(report => {
             const reportMarker = document.createElement('div');
             reportMarker.style.width = '10px';
             reportMarker.style.height = '10px';
-            reportMarker.style.backgroundColor = '#ff0000'; // Red color
+            reportMarker.style.backgroundColor = '#ff0000';
             reportMarker.style.borderRadius = '50%';
-            reportMarker.style.boxShadow = '0 0 10px 5px rgba(255, 0, 0, 0.7)'; // Glowing effect
+            reportMarker.style.boxShadow = '0 0 10px 5px rgba(255, 0, 0, 0.7)';
 
             new mapboxgl.Marker(reportMarker)
                 .setLngLat([report.longitude, report.latitude])

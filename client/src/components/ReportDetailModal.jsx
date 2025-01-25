@@ -3,7 +3,7 @@ import React from 'react';
 const ReportDisplayModal = ({ isOpen, onRequestClose, report }) => {
     const { title, location, severity, description, category, longitude, latitude, createdAt } = report;
 
-    if (!isOpen) return null; // Don't render the modal if it's not open
+    if (!isOpen) return null; 
 
     return (
         <div style={overlayStyle}>
@@ -24,7 +24,6 @@ const ReportDisplayModal = ({ isOpen, onRequestClose, report }) => {
     );
 };
 
-// Styles for the modal and overlay
 const overlayStyle = {
     position: 'fixed',
     top: 0,
@@ -35,7 +34,7 @@ const overlayStyle = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    zIndex: 1000, // Ensure the modal is above other content
+    zIndex: 1000, 
 };
 
 const modalStyle = {

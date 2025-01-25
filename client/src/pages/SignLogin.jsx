@@ -104,16 +104,15 @@ const Auth = () => {
   );
 };
 
-// Styles
 const containerStyle = {
-  backgroundColor: '#000', // Black background
-  color: 'white', // White text
+  backgroundColor: '#000',
+  color: 'white', 
   padding: '20px',
   borderRadius: '10px',
   maxWidth: '400px',
   margin: 'auto',
   textAlign: 'center',
-  height: '100vh', // Full height to cover the body
+  height: '100vh', 
 };
 
 const inputStyle = {
@@ -122,14 +121,14 @@ const inputStyle = {
   margin: '10px 0',
   borderRadius: '5px',
   border: '1px solid #ccc',
-  backgroundColor: '#444', // Dark grey background for input
-  color: 'white', // White text for input
-  boxSizing: 'border-box', // Ensure padding is included in width
+  backgroundColor: '#444', 
+  color: 'white', 
+  boxSizing: 'border-box', 
 };
 
 const buttonStyle = {
   padding: '10px',
-  backgroundColor: '#813737', // Red color for buttons
+  backgroundColor: '#813737', 
   color: 'white',
   border: 'none',
   borderRadius: '5px',
